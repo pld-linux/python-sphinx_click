@@ -101,7 +101,7 @@ Dokumentacja API modułu Pythona sphinx-click.
 %py3_build
 
 %if %{with tests}
-%{__python} -m unittest discover -s tests
+%{__python3} -m unittest discover -s tests
 %endif
 %endif
 
@@ -145,5 +145,5 @@ rm -rf $RPM_BUILD_ROOT
 %if %{with doc}
 %files apidocs
 %defattr(644,root,root,755)
-%doc docs/_build/html/*
+%doc docs/_build/html/{_static,examples,*.html,*.js}
 %endif
